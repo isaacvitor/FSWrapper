@@ -2,12 +2,6 @@
     "name": "FSWrapper",
     "keywords": "File System, Parameters",
     "description": "Library for manage parameters and other things using file system",
-    "authors":
-    {
-        "name": "Isaac Vitor",
-        "email": "isaacvitor@gmail.com",
-        "url": "https://github.com/isaacvitor/"
-    },
     "repository":
     {
         "type": "git",
