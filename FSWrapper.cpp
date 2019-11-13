@@ -2,8 +2,8 @@
 #include "FSWrapper.h
 
 void FSWrapper::FSWrapper(bool verbose){
-    this->verbose = verbose;
-    this->Open();
+    verbose = verbose;
+    Open();
 }
 bool FSWrapper::Open(void)
 {
