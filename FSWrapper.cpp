@@ -1,8 +1,8 @@
 #include "FS.h"
-#include "FSWrapper.h
+#include "FSWrapper.h"
 
-void FSWrapper::FSWrapper(bool verbose){
-    verbose = verbose;
+FSWrapper::FSWrapper(bool verbose){
+    _verbose = verbose;
     Open();
 }
 bool FSWrapper::Open(void)
@@ -26,12 +26,12 @@ void FSWrapper::Format()
 
 bool FSWrapper::isParameter(String name)
 {
-    return SPIFFS.exists(parametersPath + name);
+    return SPIFFS.exists(_parametersPath + name);
 }
 
 void FSWrapper::WriteParameter(String name, String content)
 {
-    File tempFile = SPIFFS.open(parametersPath + name, "w+");
+    File tempFile = SPIFFS.open(_parametersPath + name, "w+");
     if (!tempFile)
     {
         println("WriteParameter - Open File Error");
@@ -46,9 +46,9 @@ void FSWrapper::WriteParameter(String name, String content)
 
 String FSWrapper::ReadParameter(String name)
 {
-    if (SPIFFS.exists(parametersPath + name))
+    if (SPIFFS.exists(_parametersPath + name))
     {
-        File tempFile = SPIFFS.open(parametersPath + name, "r");
+        File tempFile = SPIFFS.open(_parametersPath + name, "r");
         if (!tempFile)
         {
             println("ReadParameter - Open File Error");
@@ -65,9 +65,25 @@ String FSWrapper::ReadParameter(String name)
 
 bool FSWrapper::RemoveParameter(String name)
 {
-    Serial.println(parametersPath + name);
-    if (SPIFFS.exists(parametersPath + name))
+    Serial.println(_parametersPath + name);
+    if (SPIFFS.exists(_parametersPath + name))
     {
-        return SPIFFS.remove(parametersPath + name);
+        return SPIFFS.remove(_parametersPath + name);
+    }
+}
+
+void FSWrapper::println(String text)
+{
+    if (_verbose)
+    {
+        Serial.println("\nFSWrapper - " + text);
+    }
+}
+
+void FSWrapper::print(String text)
+{
+    if (_verbose)
+    {
+        Serial.print("\nFSWrapper - " + text);
     }
 }
