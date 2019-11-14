@@ -8,5 +8,6 @@
         "url": "https://github.com/isaacvitor/FSWrapper.git"
     },
     "frameworks": "ESP8266",
-    "platforms": "*"
+    "platforms": "*",
+    "version": "1.0.1"
 }
