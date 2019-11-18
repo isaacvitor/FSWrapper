@@ -1,5 +1,5 @@
-#ifndef FSWrapper_h
-#define FSWrapper_h
+#ifndef FSWRAPPER_H
+#define FSWRAPPER_H
 
 class FSWrapper
 {
