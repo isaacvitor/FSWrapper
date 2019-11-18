@@ -6,6 +6,7 @@ class FSWrapper
   public:
       
       FSWrapper(bool verbose);
+      FSWrapper();
       bool Open(void);
       void Format();
       bool isParameter(String name);
@@ -15,7 +16,7 @@ class FSWrapper
 
   private:
       String _parametersPath = "parameters/";
-      bool _verbose = true;
+      bool _verbose = false;
       void println(String text);
       void print(String text);
 };

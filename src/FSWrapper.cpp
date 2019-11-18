@@ -1,8 +1,11 @@
-#include "FS.h"
+#include "<FS.h>"
 #include "FSWrapper.h"
 
-FSWrapper::FSWrapper(bool verbose){
+FSWrapper::FSWrapper(bool verbose = true){
     _verbose = verbose;
+}
+FSWrapper::FSWrapper(){
+    _verbose = false;
 }
 bool FSWrapper::Open(void)
 {
