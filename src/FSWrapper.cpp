@@ -71,8 +71,10 @@ bool FSWrapper::RemoveParameter(String name)
     if (SPIFFS.exists(_parametersPath + name))
     {
         return SPIFFS.remove(_parametersPath + name);
+    }else {
+        return false;
     }
-    return false;
+    
 }
 
 void FSWrapper::println(String text)
