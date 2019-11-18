@@ -3,7 +3,6 @@
 
 FSWrapper::FSWrapper(bool verbose){
     _verbose = verbose;
-    Open();
 }
 bool FSWrapper::Open(void)
 {
